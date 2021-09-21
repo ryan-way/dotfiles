@@ -121,4 +121,6 @@ export NVM_DIR="/home/rway/.nvm"
 
 export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'
 
+alias config='/usr/bin/git --git-dir=/home/rway/.dotfiles/ --work-tree=/home/rway'
+alias vim='nvim'
 neofetch
