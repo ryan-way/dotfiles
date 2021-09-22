@@ -102,7 +102,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-bindsym $mod+d focus child
+bindsym $mod+q focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -181,6 +181,6 @@ bar {
         status_command i3status
 }
 
-bindsym Mod4+l exec i3lock --color=333333
+bindsym Mod4+l exec ~/.config/i3/lock.sh ~/.config/i3/lock_icon.png
 bindsym Mod4+s exec --no-startup-id systemctl suspend
 bindsym Mod4+b exec ~/.config/i3/bluetooth.sh
