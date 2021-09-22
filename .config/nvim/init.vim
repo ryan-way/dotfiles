@@ -48,7 +48,7 @@ let g:ctrlp_use_caching=0
 let g:airline#extensions#tabline#enabled = 1
 
 "provider-python
-let g:python3_host_prog='/home/rway/anaconda3/bin/python'
+let g:python3_host_prog='/usr/bin/python3'
 
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
