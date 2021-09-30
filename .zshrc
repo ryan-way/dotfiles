@@ -77,7 +77,7 @@ plugins=(
   npm
   yarn
   docker
-  autojump
+  fzf 
   zsh-syntax-highlighting
   zsh-autosuggestions
 )
@@ -112,4 +112,3 @@ source $ZSH/oh-my-zsh.sh
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vim='nvim'
 
-bindkey -s '^f' 'fzf | while read line; do nvim $line; done\n'
