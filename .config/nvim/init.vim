@@ -24,14 +24,14 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 call plug#begin('~/.nvim/plugged')
 
 Plug 'morhetz/gruvbox'
-Plug 'tpope/vim-surround'
-Plug 'leafgarland/typescript-vim'
-Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'git@github.com:kien/ctrlp.vim.git'
 Plug 'git@github.com:Valloric/YouCompleteMe.git'
 Plug 'vim-airline/vim-airline'
-Plug 'lyuts/vim-rtags'
+
+" telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 call plug#end()
 
