@@ -25,7 +25,6 @@ call plug#begin('~/.nvim/plugged')
 
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
-Plug 'git@github.com:Valloric/YouCompleteMe.git'
 Plug 'vim-airline/vim-airline'
 
 " telescope
@@ -65,7 +64,3 @@ nnoremap <silent> <leader>- :vertical resize -5<CR>
 nnoremap <silent> <leader>0 :vertical resize 85<CR>
 
 "remaps for plug-in commands
-
-"You complete me
-nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
-nnoremap <silent> <leader>gf :YcmCompleter FixIt<CR>
