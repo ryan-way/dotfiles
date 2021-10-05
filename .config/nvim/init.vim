@@ -25,7 +25,6 @@ call plug#begin('~/.nvim/plugged')
 
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
-Plug 'git@github.com:kien/ctrlp.vim.git'
 Plug 'git@github.com:Valloric/YouCompleteMe.git'
 Plug 'vim-airline/vim-airline'
 
@@ -39,10 +38,6 @@ colorscheme gruvbox
 set background=dark
 
 let mapleader=" "
-"plug-in settings
-"ctrl p settings
-let g:ctrlp_user_command= ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-let g:ctrlp_use_caching=0
 
 "airline
 let g:airline#extensions#tabline#enabled = 1
@@ -70,11 +65,6 @@ nnoremap <silent> <leader>- :vertical resize -5<CR>
 nnoremap <silent> <leader>0 :vertical resize 85<CR>
 
 "remaps for plug-in commands
-"ctrl p
-nnoremap <C-p> :GFiles<CR>
-
-"rip grep
-nnoremap <leader>ps :Rg<SPACE>
 
 "You complete me
 nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
