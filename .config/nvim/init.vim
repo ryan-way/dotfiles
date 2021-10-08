@@ -25,7 +25,6 @@ call plug#begin('~/.nvim/plugged')
 
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
-Plug 'git@github.com:Valloric/YouCompleteMe.git'
 Plug 'vim-airline/vim-airline'
 
 " telescope
