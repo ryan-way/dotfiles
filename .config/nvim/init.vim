@@ -28,6 +28,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 
 " telescope
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
