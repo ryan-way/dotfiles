@@ -7,3 +7,4 @@ dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPl
 #i3lock -u -i $SCREEN
 #rm $SCREEN
 i3lock -c 333333
+feh --randomize --bg-fill ~/.local/share/backgrounds/*
