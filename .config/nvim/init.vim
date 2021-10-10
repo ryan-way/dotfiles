@@ -18,6 +18,7 @@ set undofile
 set incsearch
 
 set colorcolumn=80
+set cursorline
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 "plug ins
@@ -34,6 +35,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+
 
 call plug#end()
 
@@ -68,11 +70,6 @@ nnoremap <silent> <leader>- :vertical resize -5<CR>
 nnoremap <silent> <leader>0 :vertical resize 85<CR>
 
 "remaps for plug-in commands
-
-"You complete me
-nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
-nnoremap <silent> <leader>gf :YcmCompleter FixIt<CR>
-
 lua << EOF
 require'lspconfig'.pyright.setup{}
 
@@ -82,4 +79,3 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 require'lspconfig'.html.setup {
   capabilities = capabilities,
 }
-EOF
