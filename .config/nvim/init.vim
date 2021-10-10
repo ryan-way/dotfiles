@@ -25,8 +25,11 @@ call plug#begin('~/.nvim/plugged')
 
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
-Plug 'git@github.com:Valloric/YouCompleteMe.git'
 Plug 'vim-airline/vim-airline'
+
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " telescope
 Plug 'nvim-lua/plenary.nvim'
@@ -69,3 +72,14 @@ nnoremap <silent> <leader>0 :vertical resize 85<CR>
 "You complete me
 nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <leader>gf :YcmCompleter FixIt<CR>
+
+lua << EOF
+require'lspconfig'.pyright.setup{}
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+require'lspconfig'.html.setup {
+  capabilities = capabilities,
+}
+EOF
