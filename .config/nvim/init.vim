@@ -84,4 +84,10 @@ require'lspconfig'.html.setup {
 }
 
 require'lspconfig'.vimls.setup{}
+
+require'lspconfig'.angularls.setup{}
+
+require'lspconfig'.bashls.setup{}
+
+require'lspconfig'.tsserver.setup{}
 EOF
