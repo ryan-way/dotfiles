@@ -70,6 +70,9 @@ nnoremap <silent> <leader>- :vertical resize -5<CR>
 nnoremap <silent> <leader>0 :vertical resize 85<CR>
 
 "remaps for plug-in commands
+nnoremap <c-p> :Telescope git_files<CR>
+
+"LSP Server configs
 lua << EOF
 require'lspconfig'.pyright.setup{}
 
@@ -79,3 +82,6 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 require'lspconfig'.html.setup {
   capabilities = capabilities,
 }
+
+require'lspconfig'.vimls.setup{}
+EOF
