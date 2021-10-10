@@ -75,4 +75,11 @@ nnoremap <silent> <leader>gf :YcmCompleter FixIt<CR>
 
 lua << EOF
 require'lspconfig'.pyright.setup{}
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+require'lspconfig'.html.setup {
+  capabilities = capabilities,
+}
 EOF
