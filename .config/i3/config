@@ -212,3 +212,4 @@ bindsym Mod4+s exec --no-startup-id systemctl suspend
 # 9/30/2021 rway: error resolved by restarting computer
 bindsym Mod4+b exec "~/.config/i3/bluetooth.sh || i3-nagbar -t warning -m 'Bluetooth Error'"
 exec --no-startup-id feh --randomize --bg-fill ~/.local/share/backgrounds/*
+exec_always --no-startup-id compton
