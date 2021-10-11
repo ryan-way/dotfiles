@@ -8,13 +8,11 @@
 
 window {
     background-color: @background;
-    border:           2;
-    padding:          2;
+    padding:          1500;
+    width:            100%;
 }
 
 mainbox {
-    border:  0;
-    padding: 0;
 }
 
 message {
@@ -29,16 +27,14 @@ textbox {
 }
 
 listview {
-    border:       2px solid 0 0;
     padding:      2px 0 0;
     border-color: @separatorcolor;
     spacing:      2px;
-    scrollbar:    @scrollbar;
 }
 
 element {
     border:  0;
-    padding: 2px;
+    padding: 10px;
 }
 
 element.normal.normal {
@@ -84,14 +80,6 @@ element.alternate.urgent {
 element.alternate.active {
     background-color: @alternate-active-background;
     text-color:       @alternate-active-foreground;
-}
-
-scrollbar {
-    width:        4px;
-    border:       0;
-    handle-color: @scrollbar-handle;
-    handle-width: 8px;
-    padding:      0;
 }
 
 sidebar {
