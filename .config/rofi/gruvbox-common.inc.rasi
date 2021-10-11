@@ -7,18 +7,12 @@
    ========================================================================== */
 
 window {
-    background-color: @background;
     padding:          1500;
     width:            100%;
 }
 
-mainbox {
-}
-
 message {
-    border:       2px 0 0;
     border-color: @separatorcolor;
-    padding:      1px;
 }
 
 textbox {
@@ -27,9 +21,7 @@ textbox {
 }
 
 listview {
-    padding:      2px 0 0;
     border-color: @separatorcolor;
-    spacing:      2px;
 }
 
 element {
