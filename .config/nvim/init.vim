@@ -42,6 +42,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
+Plug 'tmsvg/pear-tree'
 
 call plug#end()
 
@@ -63,6 +64,16 @@ let g:cpp_posix_standard = 1
 let g:cpp_experimental_template_highlight = 1
 let g:cpp_concepts_highlight = 1
 let g:cpp_no_function_highlight = 1
+
+"pair-tree
+let g:pear_tree_pairs = {
+            \ '(': {'closer': ')'},
+            \ '[': {'closer': ']'},
+            \ '{': {'closer': '}'},
+            \ "'": {'closer': "'"},
+            \ '"': {'closer': '"'},
+            \ "<!--": {'closer': '-->'}
+            \ }
 
 "remaps for built-in commands
 nnoremap <leader>h :wincmd h<CR>
