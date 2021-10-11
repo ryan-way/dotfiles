@@ -47,6 +47,7 @@ Plug 'tmsvg/pear-tree'
 "css colors
 Plug 'norcalli/nvim-colorizer.lua'
 
+Plug 'kien/rainbow_parentheses.vim'
 call plug#end()
 
 set termguicolors
@@ -95,6 +96,15 @@ nnoremap <c-p> :Telescope git_files<CR>
 
 "nvim cmp setup
 set completeopt=menu,menuone,noselect
+
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
 
 lua <<EOF
 -- Setup nvim-cmp.
