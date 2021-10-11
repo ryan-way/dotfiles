@@ -24,7 +24,7 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 "plug ins
 call plug#begin('~/.nvim/plugged')
 
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 
@@ -44,8 +44,12 @@ Plug 'nvim-telescope/telescope.nvim'
 
 Plug 'tmsvg/pear-tree'
 
+"css colors
+Plug 'norcalli/nvim-colorizer.lua'
+
 call plug#end()
 
+set termguicolors
 colorscheme gruvbox
 set background=dark
 
@@ -162,4 +166,6 @@ require'lspconfig'.bashls.setup{
 require'lspconfig'.tsserver.setup{
   capabilities = capabilities 
 }
+
+require'colorizer'.setup()
 EOF
