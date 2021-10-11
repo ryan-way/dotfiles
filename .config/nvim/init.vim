@@ -18,31 +18,43 @@ set undofile
 set incsearch
 
 set colorcolumn=80
+set cursorline
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 "plug ins
 call plug#begin('~/.nvim/plugged')
 
-Plug 'morhetz/gruvbox'
-Plug 'tpope/vim-surround'
-Plug 'leafgarland/typescript-vim'
-Plug 'jremmen/vim-ripgrep'
+Plug 'gruvbox-community/gruvbox'
 Plug 'tpope/vim-fugitive'
-Plug 'git@github.com:kien/ctrlp.vim.git'
-Plug 'git@github.com:Valloric/YouCompleteMe.git'
 Plug 'vim-airline/vim-airline'
-Plug 'lyuts/vim-rtags'
 
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+" telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
+Plug 'tmsvg/pear-tree'
+
+"css colors
+Plug 'norcalli/nvim-colorizer.lua'
+
+Plug 'kien/rainbow_parentheses.vim'
 call plug#end()
 
+set termguicolors
 colorscheme gruvbox
 set background=dark
 
 let mapleader=" "
-"plug-in settings
-"ctrl p settings
-let g:ctrlp_user_command= ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-let g:ctrlp_use_caching=0
 
 "airline
 let g:airline#extensions#tabline#enabled = 1
@@ -58,6 +70,16 @@ let g:cpp_experimental_template_highlight = 1
 let g:cpp_concepts_highlight = 1
 let g:cpp_no_function_highlight = 1
 
+"pair-tree
+let g:pear_tree_pairs = {
+            \ '(': {'closer': ')'},
+            \ '[': {'closer': ']'},
+            \ '{': {'closer': '}'},
+            \ "'": {'closer': "'"},
+            \ '"': {'closer': '"'},
+            \ "<!--": {'closer': '-->'}
+            \ }
+
 "remaps for built-in commands
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
@@ -70,12 +92,90 @@ nnoremap <silent> <leader>- :vertical resize -5<CR>
 nnoremap <silent> <leader>0 :vertical resize 85<CR>
 
 "remaps for plug-in commands
-"ctrl p
-nnoremap <C-p> :GFiles<CR>
+nnoremap <c-p> :Telescope git_files<CR>
 
-"rip grep
-nnoremap <leader>ps :Rg<SPACE>
+"nvim cmp setup
+set completeopt=menu,menuone,noselect
 
-"You complete me
-nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
-nnoremap <silent> <leader>gf :YcmCompleter FixIt<CR>
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+
+lua <<EOF
+-- Setup nvim-cmp.
+local cmp = require'cmp'
+
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      -- For `vsnip` user.
+      vim.fn["vsnip#anonymous"](args.body)
+
+      -- For `luasnip` user.
+      -- require('luasnip').lsp_expand(args.body)
+
+      -- For `ultisnips` user.
+      -- vim.fn["UltiSnips#Anon"](args.body)
+    end,
+  },
+  mapping = {
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.close(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+  },
+  sources = {
+    { name = 'nvim_lsp' },
+
+    -- For vsnip user.
+    { name = 'vsnip' },
+
+    -- For luasnip user.
+    -- { name = 'luasnip' },
+
+    -- For ultisnips user.
+    -- { name = 'ultisnips' },
+
+    { name = 'buffer' },
+  }
+})
+
+-- Setup lspconfig.
+-- require('lspconfig')[%YOUR_LSP_SERVER%].setup {
+--   capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- }
+local capabilites = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+capabilites.textDocument.completion.completionItem.snippetSupport = true
+
+require'lspconfig'.pyright.setup{
+  capabilities = capabilities 
+}
+
+require'lspconfig'.html.setup {
+  capabilities = capabilities 
+}
+
+require'lspconfig'.vimls.setup{
+  capabilities = capabilities 
+}
+
+-- require'lspconfig'.angularls.setup{
+--   capabilities = capabilities 
+-- }
+
+require'lspconfig'.bashls.setup{
+  capabilities = capabilities 
+}
+
+require'lspconfig'.tsserver.setup{
+  capabilities = capabilities 
+}
+
+require'colorizer'.setup()
+EOF

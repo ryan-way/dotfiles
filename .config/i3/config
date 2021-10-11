@@ -13,7 +13,8 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:Hack Nerd Font 10
+for_window [class="^.*"] border pixel 1
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -24,7 +25,7 @@ font pango:monospace 8
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/i3/lock.sh --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -50,13 +51,13 @@ bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show run -showicons -lines 3
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -185,10 +186,30 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
+#bar {
+#        status_command i3status
+#}
 
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #83a598 #83a598 #ebdbb2 #83a598   #83a598
+client.focused_inactive #d5c4a1 #d5c4a1 #282828 #d5c4a1   #d5c4a1
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
+
+gaps inner 5
+gaps outer 10
+
+exec_always ~/.config/i3/polybar/launch.sh
+
+#System commands
 bindsym Mod4+l exec ~/.config/i3/lock.sh ~/.config/i3/lock_icon.png
 bindsym Mod4+s exec --no-startup-id systemctl suspend
-bindsym Mod4+b exec ~/.config/i3/bluetooth.sh
+
+# 9/30/2021 rway: error resolved by restarting computer
+bindsym Mod4+b exec "~/.config/i3/bluetooth.sh || i3-nagbar -t warning -m 'Bluetooth Error'"
+exec --no-startup-id feh --randomize --bg-fill ~/.local/share/backgrounds/*
+exec_always --no-startup-id compton

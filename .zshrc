@@ -1,3 +1,4 @@
+if [ "$TMUX" = "" ]; then tmux; fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -112,3 +113,4 @@ source $ZSH/oh-my-zsh.sh
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vim='nvim'
 
+neofetch
