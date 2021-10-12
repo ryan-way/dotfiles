@@ -1,0 +1,8 @@
+[core]
+	editor = vim
+	pager = cat
+[user]
+	name = Ryan Way
+	email = ryan.keith.way@gmail.com
+[init]
+	defaultBranch = main
