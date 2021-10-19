@@ -115,4 +115,12 @@ alias vim='nvim'
 alias n='nvim'
 . z
 
+function apt() {
+  /usr/bin/apt $@ || exit $?
+
+  user=${SUDO_USER:-${USER}}
+  home=`eval echo ~$user`
+  apt-mark showmanual > $home/.config/packages.txt
+}
+
 screenfetch
