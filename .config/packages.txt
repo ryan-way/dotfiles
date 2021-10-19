@@ -53,6 +53,7 @@ gzip
 hollywood
 hostname
 htop
+hub
 hunspell-en-us
 hyphen-en-us
 i3-gaps

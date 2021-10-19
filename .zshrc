@@ -122,5 +122,6 @@ function apt() {
   home=`eval echo ~$user`
   apt-mark showmanual > $home/.config/packages.txt
 }
+export PATH=$PATH:~/go/bin
 
 screenfetch
