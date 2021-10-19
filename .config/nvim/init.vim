@@ -48,6 +48,8 @@ Plug 'tmsvg/pear-tree'
 Plug 'norcalli/nvim-colorizer.lua'
 
 Plug 'kien/rainbow_parentheses.vim'
+
+Plug 'lewis6991/gitsigns.nvim'
 call plug#end()
 
 set termguicolors
@@ -179,4 +181,6 @@ require'lspconfig'.tsserver.setup{
 }
 
 require'colorizer'.setup()
+
+require'gitsigns'.setup()
 EOF
