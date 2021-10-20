@@ -210,6 +210,6 @@ bindsym Mod4+l exec ~/.config/i3/lock.sh ~/.config/i3/lock_icon.png
 bindsym Mod4+s exec --no-startup-id systemctl suspend
 
 # 9/30/2021 rway: error resolved by restarting computer
-bindsym Mod4+b exec "~/.config/i3/bluetooth.sh || i3-nagbar -t warning -m 'Bluetooth Error'"
+bindsym Mod4+b exec "~/.config/i3/bluetooth.sh || i3-nagbar -t warning -m 'Bluetooth Error, use recover script'"
 exec --no-startup-id feh --randomize --bg-fill ~/.local/share/backgrounds/*
 exec compton
