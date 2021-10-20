@@ -113,7 +113,19 @@ source $ZSH/oh-my-zsh.sh
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vim='nvim'
 alias n='nvim'
+
+# setup for z
 . z
+export PATH=$PATH:~/go/bin
+
+# define function to fuzzy find git repo
+function find_git_repo() {
+  ghq list -p | fzf
+}
+#define widget
+zle -N find_git_repo
+#bind to key
+bindkey "^g" find_git_repo
 
 function apt() {
   /usr/bin/apt $@ || exit $?
@@ -122,6 +134,5 @@ function apt() {
   home=`eval echo ~$user`
   apt-mark showmanual > $home/.config/packages.txt
 }
-export PATH=$PATH:~/go/bin
 
 screenfetch
