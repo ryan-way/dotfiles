@@ -118,14 +118,27 @@ alias n='nvim'
 . z
 export PATH=$PATH:~/go/bin
 
-# define function to fuzzy find git repo
-function find_git_repo() {
-  ghq list -p | fzf
+#define function to edit fuzzy found config files
+function edit-config-nvim() {
+  pushd ~/
+  configFile=$(config ls-files | fzf)
+  nvim $configFile
+  popd
 }
 #define widget
-zle -N find_git_repo
+zle -N edit-config-nvim
+bindkey "^q" edit-config-nvim
+
+# define function to fuzzy find git repo
+function find-git-repo() {
+  fuzzyProject=$(ghq list --unique | fzf)
+  projectFullPath=$(ghq list -p $fuzzyProject)
+  z $projectFullPath
+}
+#define widget
+zle -N find-git-repo
 #bind to key
-bindkey "^g" find_git_repo
+bindkey "^g" find-git-repo
 
 function apt() {
   /usr/bin/apt $@ || exit $?
