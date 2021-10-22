@@ -1,19 +1,19 @@
 "provider-python
 let g:python3_host_prog='/usr/bin/python3'
 
-source built-ins.vim
-source plugins.vim
-source colors.vim
-source remap.vim
+source ~/.config/nvim/built-ins.vim
+source ~/.config/nvim/plugins.vim
+source ~/.config/nvim/colors.vim
+source ~/.config/nvim/remap.vim
 
 "plugins
-source plugins/ale.vim
-source plugins/airline.vim
-source plugins/pair-tree.vim
-source plugins/telescope.vim
-source plugins/nvim-cmp.vim
-source plugins/rainbowparen.vim
-source plugins/nvim-lspconfig.vim
-source plugins/colorizer.vim
-source plugins/gitsigns.vim
-
+source ~/.config/nvim/plugins/ale.vim
+source ~/.config/nvim/plugins/airline.vim
+source ~/.config/nvim/plugins/pair-tree.vim
+source ~/.config/nvim/plugins/telescope.vim
+source ~/.config/nvim/plugins/nvim-cmp.vim
+source ~/.config/nvim/plugins/rainbowparen.vim
+source ~/.config/nvim/plugins/nvim-lspconfig.vim
+source ~/.config/nvim/plugins/colorizer.vim
+source ~/.config/nvim/plugins/gitsigns.vim
+source ~/.config/nvim/plugins/vsnip.vim

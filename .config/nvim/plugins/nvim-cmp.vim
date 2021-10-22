@@ -1,7 +1,8 @@
-set completeopt=menu,menuone,noselect
+set completeopt=menu,menuone "noselect???
 
 lua << EOF
 local cmp = require'cmp'
+local lspkind = require('lspkind')
 
 cmp.setup({
   snippet = {
@@ -28,6 +29,7 @@ cmp.setup({
 
     -- For vsnip user.
     { name = 'vsnip' },
+    { name = 'path' },
 
     -- For luasnip user.
     -- { name = 'luasnip' },
@@ -35,7 +37,21 @@ cmp.setup({
     -- For ultisnips user.
     -- { name = 'ultisnips' },
 
-    { name = 'buffer' },
-  }
+    { name = 'buffer', keyword_length = 5 },
+  },
+  formatting = {
+    format = lspkind.cmp_format {
+      with_text = true,
+      menu = {
+        buffer = "[buf]",
+        nvim_lsp = "[LSP]",
+        path = "[path]",
+        vsnip = '[vnsip]',
+      },
+    },
+  },
+  experimental = {
+    ghost_text = true,
+  },
 })
 EOF
