@@ -1,6 +1,5 @@
 call plug#begin('~/.nvim/plugged')
 
-Plug 'dense-analysis/ale'
 Plug 'gruvbox-community/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'

@@ -7,7 +7,6 @@ source ~/.config/nvim/colors.vim
 source ~/.config/nvim/remap.vim
 
 "plugins
-source ~/.config/nvim/plugins/ale.vim
 source ~/.config/nvim/plugins/airline.vim
 source ~/.config/nvim/plugins/pair-tree.vim
 source ~/.config/nvim/plugins/telescope.vim
