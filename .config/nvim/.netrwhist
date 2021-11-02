@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/rway/projects/game/src/app'
+let g:netrw_dirhist_5='/home/rway/projects/game/src'
+let g:netrw_dirhist_4='/home/rway/projects/game'
+let g:netrw_dirhist_3='/home/rway/projects/tutorials/github-actions/.github/workflows'
+let g:netrw_dirhist_2='/home/rway/.nvim/plugged'
+let g:netrw_dirhist_1='/home/rway/.oh-my-zsh'

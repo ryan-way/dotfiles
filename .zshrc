@@ -133,7 +133,8 @@ bindkey "^q" edit-config-nvim
 function find-git-repo() {
   fuzzyProject=$(ghq list --unique | fzf)
   projectFullPath=$(ghq list -p $fuzzyProject)
-  z $projectFullPath
+  cd $projectFullPath
+  zle accept-line
 }
 #define widget
 zle -N find-git-repo
