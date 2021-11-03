@@ -9,3 +9,6 @@ nnoremap <leader>s :sp<CR>
 nnoremap <silent> <leader>= :vertical resize +5<CR>
 nnoremap <silent> <leader>- :vertical resize -5<CR>
 nnoremap <silent> <leader>0 :vertical resize 85<CR>
+
+nnoremap <c-j> :cnext<CR>
+nnoremap <c-k> :cprev<CR>

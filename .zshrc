@@ -113,6 +113,7 @@ source $ZSH/oh-my-zsh.sh
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vim='nvim'
 alias n='nvim'
+alias ls='lsd -alh'
 
 # setup for z
 . z
@@ -120,10 +121,12 @@ export PATH=$PATH:~/go/bin
 
 #define function to edit fuzzy found config files
 function edit-config-nvim() {
-  pushd ~/
   configFile=$(config ls-files | fzf)
-  nvim $configFile
-  popd
+  if [ -n "$configFile" ]; then
+    pushd ~/
+    nvim $configFile
+    popd
+  fi
 }
 #define widget
 zle -N edit-config-nvim
@@ -150,3 +153,7 @@ function apt() {
 }
 
 screenfetch
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

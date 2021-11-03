@@ -6,3 +6,9 @@
 	email = ryan.keith.way@gmail.com
 [init]
 	defaultBranch = main
+[alias]
+	ffs = flow feature start
+	fff = flow feature finish
+	s = status
+	fi = flow init
+	c = commit
