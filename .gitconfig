@@ -12,3 +12,4 @@
 	s = status
 	fi = flow init
 	c = commit
+	l = log -5 --oneline
