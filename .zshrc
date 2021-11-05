@@ -177,3 +177,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 screenfetch
+
+alias luamake=/home/rway/ghq/github.com/sumneko/lua-language-server/3rd/luamake/luamake
