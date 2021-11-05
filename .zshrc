@@ -120,7 +120,7 @@ cd() {
   builtin cd $@
   currTopLevel=$(git rev-parse --show-toplevel 2>&1 1> /dev/null)
   if [ $? -eq 0 ] && [ "$prevTopLevel" != "$currTopLevel" ]; then
-    onefetch
+    onefetch 2> /dev/null
   fi
 }
 
@@ -133,7 +133,7 @@ z() {
   _z 2>&1 $@
   currTopLevel=$(git rev-parse --show-toplevel 2> /dev/null)
   if [ $? -eq 0 ] && [ "$prevTopLevel" != "$currTopLevel" ]; then
-    onefetch
+    onefetch 2> /dev/null
   fi
 }
 
