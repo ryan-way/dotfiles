@@ -113,11 +113,29 @@ source $ZSH/oh-my-zsh.sh
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vim='nvim'
 alias n='nvim'
-alias ls='lsd -alh'
+alias ls='lsd'
+
+cd() {
+  prevTopLevel=$(git rev-parse --show-toplevel 2>&1 1> /dev/null)
+  builtin cd $@
+  currTopLevel=$(git rev-parse --show-toplevel 2>&1 1> /dev/null)
+  if [ $? -eq 0 ] && [ "$prevTopLevel" != "$currTopLevel" ]; then
+    onefetch
+  fi
+}
 
 # setup for z
 . z
 export PATH=$PATH:~/go/bin
+
+z() {
+  prevTopLevel=$(git rev-parse --show-toplevel 2> /dev/null)
+  _z 2>&1 $@
+  currTopLevel=$(git rev-parse --show-toplevel 2> /dev/null)
+  if [ $? -eq 0 ] && [ "$prevTopLevel" != "$currTopLevel" ]; then
+    onefetch
+  fi
+}
 
 #define function to edit fuzzy found config files
 function edit-config-nvim() {
@@ -154,8 +172,8 @@ function apt() {
   apt-mark showmanual > $home/.config/packages.txt
 }
 
-screenfetch
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+screenfetch
