@@ -13,3 +13,4 @@
 	fi = flow init
 	c = commit
 	l = log -5 --oneline
+	cm = commit -m
