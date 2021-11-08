@@ -7,7 +7,7 @@ luafile ~/.config/nvim/colors.lua
 luafile ~/.config/nvim/remap.lua
 
 "plugins
-source ~/.config/nvim/plugins/airline.vim
+luafile ~/.config/nvim/plugins/airline.lua
 source ~/.config/nvim/plugins/pair-tree.vim
 source ~/.config/nvim/plugins/telescope.vim
 source ~/.config/nvim/plugins/nvim-cmp.vim
