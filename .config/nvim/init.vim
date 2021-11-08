@@ -2,7 +2,7 @@
 let g:python3_host_prog='/usr/bin/python3'
 
 source ~/.config/nvim/built-ins.vim
-source ~/.config/nvim/plugins.vim
+luafile ~/.config/nvim/plugins.lua
 source ~/.config/nvim/colors.vim
 source ~/.config/nvim/remap.vim
 
