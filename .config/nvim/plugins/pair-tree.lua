@@ -1,3 +1,4 @@
+vim.cmd([[
 let g:pear_tree_pairs = {
             \ '(': {'closer': ')'},
             \ '[': {'closer': ']'},
@@ -7,3 +8,4 @@ let g:pear_tree_pairs = {
             \ '/*': {'closer': '*/'},
             \ "<!--": {'closer': '-->'}
             \ }
+]])

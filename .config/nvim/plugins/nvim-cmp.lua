@@ -1,6 +1,5 @@
-set completeopt=menu,menuone "noselect???
+vim.o.completeopt = "menu,menuone"
 
-lua << EOF
 local cmp = require'cmp'
 local lspkind = require('lspkind')
 
@@ -55,4 +54,3 @@ cmp.setup({
     ghost_text = true,
   },
 })
-EOF
