@@ -3,8 +3,8 @@ let g:python3_host_prog='/usr/bin/python3'
 
 source ~/.config/nvim/built-ins.vim
 luafile ~/.config/nvim/plugins.lua
-source ~/.config/nvim/colors.vim
-source ~/.config/nvim/remap.vim
+luafile ~/.config/nvim/colors.lua
+luafile ~/.config/nvim/remap.lua
 
 "plugins
 source ~/.config/nvim/plugins/airline.vim
