@@ -16,3 +16,4 @@ source ~/.config/nvim/plugins/nvim-lspconfig.vim
 source ~/.config/nvim/plugins/colorizer.vim
 source ~/.config/nvim/plugins/gitsigns.vim
 source ~/.config/nvim/plugins/vsnip.vim
+source ~/.config/nvim/plugins/markdown-preview.vim

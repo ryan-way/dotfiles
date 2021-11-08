@@ -14,3 +14,5 @@
 	c = commit
 	l = log -5 --oneline
 	cm = commit -m
+	frs = flow release start
+	frf = flow release finish

@@ -35,5 +35,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'kien/rainbow_parentheses.vim'
 
 Plug 'lewis6991/gitsigns.nvim'
+
+Plug 'iamcco/markdown-preview.nvim', {'do': { -> mkdp#util#install() }, 'for' : ['markdown', 'vim-plug']}
 call plug#end()
 
