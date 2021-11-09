@@ -8,10 +8,13 @@ set tabstop=2 softtabstop=2
 set shiftwidth=2
 set expandtab
 set smartindent
+set nohlsearch
 set nu
 set nowrap
 set smartcase
 set noswapfile
+set scrolloff=8
+set signcolumn=yes
 set nobackup
 set undodir=~/.nvim/undodir
 set undofile
