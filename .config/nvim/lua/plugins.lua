@@ -9,6 +9,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-commentary'
 
 Plug 'neovim/nvim-lspconfig'
+Plug 'glepnir/lspsaga.nvim'
 
 --completion
 Plug 'hrsh7th/nvim-cmp'
