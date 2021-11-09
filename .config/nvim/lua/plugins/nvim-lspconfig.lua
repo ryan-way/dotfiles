@@ -6,27 +6,27 @@ local capabilites = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol
 capabilites.textDocument.completion.completionItem.snippetSupport = true
 
 require'lspconfig'.pyright.setup{
-  capabilities = capabilities 
+  capabilities = capabilities
 }
 
 require'lspconfig'.html.setup {
-  capabilities = capabilities 
+  capabilities = capabilities
 }
 
 require'lspconfig'.vimls.setup{
-  capabilities = capabilities 
+  capabilities = capabilities
 }
 
 -- require'lspconfig'.angularls.setup{
---   capabilities = capabilities 
+--   capabilities = capabilities
 -- }
 
 require'lspconfig'.bashls.setup{
-  capabilities = capabilities 
+  capabilities = capabilities
 }
 
 require'lspconfig'.tsserver.setup{
-  capabilities = capabilities 
+  capabilities = capabilities
 }
 
 require'lspconfig'.cssls.setup {
