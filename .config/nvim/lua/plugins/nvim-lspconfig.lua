@@ -48,16 +48,22 @@ require'lspconfig'.sumneko_lua.setup {
       runtime = {
         version = 'LuaJIT',
         path = runtime_path,
-        },
+      },
       diagnostics = {
         globals = {'vim'},
-        },
+      },
       workspace = {
         library = vim.api.nvim_get_runtime_file("", true),
-        },
+      },
       telemetry = {
         enable = false,
-        },
       },
     },
-  }
+  },
+}
+
+local opt = {noremap = true, silent = true}
+local map = vim.api.nvim_set_keymap
+map('n', 'gd', [[<cmd>lua vim.lsp.buf.definition()<CR>]], opt)
+map('n', 'gr', [[<cmd>lua vim.lsp.buf.rename()<CR>]], opt)
+map('n', '<leader>f', [[<cmd>lua vim.lsp.buf.formatting()<CR>]], opt)
