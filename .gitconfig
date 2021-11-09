@@ -1,0 +1,18 @@
+[core]
+	editor = vim
+	pager = cat
+[user]
+	name = Ryan Way
+	email = ryan.keith.way@gmail.com
+[init]
+	defaultBranch = main
+[alias]
+	ffs = flow feature start
+	fff = flow feature finish
+	s = status
+	fi = flow init
+	c = commit
+	l = log -5 --oneline
+	cm = commit -m
+	frs = flow release start
+	frf = flow release finish

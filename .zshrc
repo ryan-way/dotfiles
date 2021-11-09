@@ -1,4 +1,4 @@
-if [ "$TMUX" = "" ]; then tmux; fi
+if [ "$TMUX" = "" ]; then return; fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -110,7 +110,72 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME -C $HOME'
 alias vim='nvim'
+alias n='nvim'
+alias ls='lsd'
 
-neofetch
+cd() {
+  prevTopLevel=$(git rev-parse --show-toplevel 2>&1 1> /dev/null)
+  builtin cd $@
+  currTopLevel=$(git rev-parse --show-toplevel 2>&1 1> /dev/null)
+  if [ $? -eq 0 ] && [ "$prevTopLevel" != "$currTopLevel" ]; then
+    onefetch 2> /dev/null
+  fi
+}
+
+# setup for z
+. z
+export PATH=$PATH:~/go/bin
+
+z() {
+  prevTopLevel=$(git rev-parse --show-toplevel 2> /dev/null)
+  _z 2>&1 $@
+  currTopLevel=$(git rev-parse --show-toplevel 2> /dev/null)
+  if [ $? -eq 0 ] && [ "$prevTopLevel" != "$currTopLevel" ]; then
+    onefetch 2> /dev/null
+  fi
+}
+
+#define function to edit fuzzy found config files
+function edit-config-nvim() {
+  configFile=$(config ls-files | fzf)
+  if [ -n "$configFile" ]; then
+    pushd ~/
+    nvim $configFile
+    popd
+  fi
+}
+#define widget
+zle -N edit-config-nvim
+bindkey "^q" edit-config-nvim
+
+# define function to fuzzy find git repo
+function find-git-repo() {
+  fuzzyProject=$(ghq list --unique | fzf)
+  projectFullPath=$(ghq list -p $fuzzyProject)
+  if [ -n $projectFullPath ]; then
+    cd $projectFullPath
+    zle accept-line
+  fi
+}
+#define widget
+zle -N find-git-repo
+#bind to key
+bindkey "^g" find-git-repo
+
+function apt() {
+  /usr/bin/apt $@ || exit $?
+
+  user=${SUDO_USER:-${USER}}
+  home=`eval echo ~$user`
+  apt-mark showmanual > $home/.config/packages.txt
+}
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+screenfetch
+
+alias luamake=/home/rway/ghq/github.com/sumneko/lua-language-server/3rd/luamake/luamake
