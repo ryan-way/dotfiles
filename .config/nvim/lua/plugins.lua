@@ -39,6 +39,4 @@ Plug 'kien/rainbow_parentheses.vim'
 
 Plug 'lewis6991/gitsigns.nvim'
 
-Plug('iamcco/markdown-preview.nvim', {['do'] = vim.fn['mkdp#util#install'] , ['for'] = {'markdown', 'vim-plug'}})
-
 vim.call('plug#end')
