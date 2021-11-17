@@ -141,9 +141,7 @@ z() {
 function edit-config-nvim() {
   configFile=$(config ls-files | fzf)
   if [ -n "$configFile" ]; then
-    pushd ~/
-    nvim $configFile
-    popd
+    nvim ~/$configFile
   fi
 }
 #define widget
