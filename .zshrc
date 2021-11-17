@@ -113,6 +113,8 @@ source $ZSH/oh-my-zsh.sh
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME -C $HOME'
 alias vim='nvim'
 alias n='nvim'
+alias n.='nvim .'
+alias c="config"
 alias ls='lsd'
 
 cd() {
