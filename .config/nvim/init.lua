@@ -6,6 +6,7 @@ require('colors')
 require('remap')
 require('netrw')
 
+require('fugitive')
 require('plugins.airline')
 require('plugins.pair-tree')
 require('plugins.telescope')
