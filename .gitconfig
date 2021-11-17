@@ -2,7 +2,7 @@
 	editor = vim
 	pager = cat
 [user]
-	name = Ryan Way
+	name = ryan-way
 	email = ryan.keith.way@gmail.com
 [init]
 	defaultBranch = main
