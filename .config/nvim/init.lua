@@ -4,6 +4,7 @@ require('built-ins')
 require('plugins')
 require('colors')
 require('remap')
+require('netrw')
 
 require('plugins.airline')
 require('plugins.pair-tree')
