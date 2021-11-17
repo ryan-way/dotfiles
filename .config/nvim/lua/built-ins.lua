@@ -23,4 +23,5 @@ set incsearch
 set colorcolumn=80
 set cursorline
 highlight ColorColumn ctermbg=0 guibg=lightgrey
+cabbrev h vert help
 ]])
