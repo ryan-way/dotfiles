@@ -116,6 +116,7 @@ alias n='nvim'
 alias n.='nvim .'
 alias c="config"
 alias ls='lsd'
+alias cat='bat'
 
 cd() {
   prevTopLevel=$(git rev-parse --show-toplevel 2>&1 1> /dev/null)
@@ -189,3 +190,7 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+# tabtab source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+[[ -f /home/rway/.npm/_npx/6913fdfd1ea7a741/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /home/rway/.npm/_npx/6913fdfd1ea7a741/node_modules/tabtab/.completions/electron-forge.zsh
