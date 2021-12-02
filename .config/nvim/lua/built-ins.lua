@@ -13,7 +13,7 @@ set nu
 set nowrap
 set smartcase
 set noswapfile
-set scrolloff=8
+set scrolloff=16
 set signcolumn=yes
 set nobackup
 set undodir=~/.nvim/undodir

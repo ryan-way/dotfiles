@@ -1,4 +1,4 @@
-vim.o.completeopt = "menu,menuone"
+vim.o.completeopt = "menu,menuone,preview"
 
 local cmp = require'cmp'
 local lspkind = require('lspkind')
@@ -22,6 +22,9 @@ cmp.setup({
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.close(),
     ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+  },
+  completion = {
+    completeopt = 'menu,menuone,preview'
   },
   sources = {
     { name = 'nvim_lsp' },

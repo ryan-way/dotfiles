@@ -17,6 +17,7 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'onsails/lspkind-nvim'
+Plug('evanleck/vim-svelte', {['branch']= 'main'})
 
 --snippet plugins
 Plug 'hrsh7th/vim-vsnip'
@@ -30,7 +31,8 @@ Plug('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn[':TSUpdate']})
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-Plug 'tmsvg/pear-tree'
+-- Plug 'tmsvg/pear-tree'
+Plug 'windwp/nvim-autopairs'
 
 --css colors
 Plug 'norcalli/nvim-colorizer.lua'
@@ -38,5 +40,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'kien/rainbow_parentheses.vim'
 
 Plug 'lewis6991/gitsigns.nvim'
+
+Plug('instant-markdown/vim-instant-markdown', {['for'] = 'markdown', ['do'] = 'yarn install'})
 
 vim.call('plug#end')
