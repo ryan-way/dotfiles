@@ -8,6 +8,7 @@ require('netrw')
 
 require('plugins.nvim-autopairs')
 require('fugitive')
+require('plugins.ale')
 require('plugins.airline')
 require('plugins.pair-tree')
 require('plugins.telescope')
