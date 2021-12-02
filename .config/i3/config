@@ -51,7 +51,8 @@ bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty -e $SHELL -i -c tmux &
+bindsym $mod+Return exec alacritty -e $SHELL -i -c "tmux a || tmux" &
+bindsym $mod+n exec alacritty -e $SHELL -i -c tmux &
 
 # kill focused window
 bindsym $mod+Shift+q kill
