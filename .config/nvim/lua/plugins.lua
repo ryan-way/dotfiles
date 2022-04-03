@@ -44,4 +44,6 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug('instant-markdown/vim-instant-markdown', {['for'] = 'markdown', ['do'] = 'yarn install'})
 Plug('dense-analysis/ale')
 
+Plug('puremourning/vimspector')
+
 vim.call('plug#end')

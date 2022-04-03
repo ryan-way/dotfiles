@@ -1,6 +1,7 @@
 vim.g.python3_host_prog = '/usr/bin/python3'
 
 require('built-ins')
+require('plugins.vimspector')
 require('plugins')
 require('colors')
 require('remap')
@@ -18,4 +19,3 @@ require('plugins.nvim-lspconfig')
 require('plugins.colorizer')
 require('plugins.gitsigns')
 require('plugins.vsnip')
-require('plugins.lspsaga')
