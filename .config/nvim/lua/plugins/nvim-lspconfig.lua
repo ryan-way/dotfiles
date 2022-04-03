@@ -42,9 +42,9 @@ require'lspconfig'.cssls.setup {
   capabilities = capabilities
 }
 
-require'lspconfig'.eslint.setup {
-  capabilites = capabilities
-}
+-- require'lspconfig'.eslint.setup {
+--   capabilites = capabilities
+-- }
 
 require'lspconfig'.vuels.setup {
   capabilities = capabilities
