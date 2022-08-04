@@ -42,7 +42,7 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'lewis6991/gitsigns.nvim'
 
 Plug('instant-markdown/vim-instant-markdown', {['for'] = 'markdown', ['do'] = 'yarn install'})
-Plug('dense-analysis/ale')
+-- Plug('dense-analysis/ale')
 
 Plug('puremourning/vimspector')
 
