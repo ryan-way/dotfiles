@@ -26,6 +26,10 @@ require'lspconfig'.flow.setup {
   capabilites = capabilities
 }
 
+require'lspconfig'.gopls.setup {
+  capabilities = capabilities
+}
+
 require'lspconfig'.svelte.setup {
   capabilities = capabilities
 }
@@ -40,6 +44,10 @@ require'lspconfig'.tsserver.setup{
 
 require'lspconfig'.cssls.setup {
   capabilities = capabilities
+}
+
+require'lspconfig'.rls.setup {
+  capabilities = capabilites
 }
 
 -- require'lspconfig'.eslint.setup {
