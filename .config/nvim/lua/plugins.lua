@@ -45,5 +45,6 @@ Plug('instant-markdown/vim-instant-markdown', {['for'] = 'markdown', ['do'] = 'y
 -- Plug('dense-analysis/ale')
 
 Plug('puremourning/vimspector')
+Plug('mhinz/vim-startify')
 
 vim.call('plug#end')
