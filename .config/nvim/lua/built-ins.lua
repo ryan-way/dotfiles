@@ -1,6 +1,6 @@
 vim.cmd([[
 syntax on
-
+set mouse=nicr
 set noshowmode
 set relativenumber
 set noerrorbells
