@@ -127,7 +127,6 @@ cd() {
 }
 
 # setup for z
-. z
 export PATH=$PATH:~/go/bin
 
 z() {
@@ -139,6 +138,7 @@ z() {
   fi
 }
 
+. ~/ghq/github.com/rupa/z/z.sh
 #define function to edit fuzzy found config files
 function edit-config-nvim() {
   configFile=$(config ls-files | fzf)
@@ -193,3 +193,6 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 # tabtab source for electron-forge package
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`
 [[ -f /home/rway/.npm/_npx/6913fdfd1ea7a741/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /home/rway/.npm/_npx/6913fdfd1ea7a741/node_modules/tabtab/.completions/electron-forge.zsh
+
+export DENO_INSTALL="/home/rway/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
