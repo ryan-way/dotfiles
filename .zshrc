@@ -1,6 +1,3 @@
-if ! [ $TMUX ]; then
-  return
-fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -117,7 +114,7 @@ alias vim='nvim'
 alias n='nvim'
 alias n.='nvim .'
 alias c="config"
-alias ls='lsd'
+alias ls='exa'
 alias cat='bat'
 
 cd() {
@@ -199,3 +196,10 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 
 export DENO_INSTALL="/home/rway/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+eval "$(eval starship init zsh)"
+
+alias grep="rg"

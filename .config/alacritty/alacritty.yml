@@ -423,9 +423,6 @@ live_config_reload: true
 #   - (Windows) powershell
 shell:
   program: /usr/bin/zsh
-  args:
-    - -c
-    - "tmux"
 
 
 # Startup directory

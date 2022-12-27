@@ -17,14 +17,19 @@ require'lspconfig'.vimls.setup{
   capabilities = capabilities
 }
 
-require'lspconfig'.angularls.setup{
-  capabilities = capabilities
+-- require'lspconfig'.angularls.setup{
+--   capabilities = capabilities
 
-}
+-- }
 
 require'lspconfig'.flow.setup {
   capabilites = capabilities
 }
+
+require'lspconfig'.vuels.setup{
+  capabilites = capabilities
+}
+
 
 require'lspconfig'.gopls.setup {
   capabilities = capabilities
@@ -44,6 +49,10 @@ require'lspconfig'.tsserver.setup{
 
 require'lspconfig'.cssls.setup {
   capabilities = capabilities
+}
+
+require'lspconfig'.prismals.setup{
+  capabilites = capabilites
 }
 
 require'lspconfig'.rls.setup {

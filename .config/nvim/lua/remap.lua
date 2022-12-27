@@ -6,6 +6,10 @@ map ( 'n', '<leader>j', ':wincmd j<cr>', { noremap = true })
 map ( 'n', '<leader>k', ':wincmd k<cr>', { noremap = true })
 map ( 'n', '<leader>l', ':wincmd l<cr>', { noremap = true })
 
+map ( 'n', '<leader>t', ':tabnew<cr>', { noremap = true })
+map ( 'n', '<leader>n', ':tabnext<cr>', { noremap = true })
+map ( 'n', '<leader>p', ':tabprev<cr>', { noremap = true })
+
 map ( 'n', '<leader>v', ':vsplit<cr>', { noremap = true })
 map ( 'n', '<leader>s', ':sp<cr>', { noremap = true })
 
