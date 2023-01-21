@@ -30,7 +30,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/i3/lock.sh --no
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
-exec xrandr --output eDP-1-1 --off
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -51,7 +50,8 @@ bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty -e $SHELL -i -c tmux &
+bindsym $mod+Return exec alacritty -e $SHELL -i -c "tmux a || tmux" &
+bindsym $mod+n exec alacritty -e $SHELL -i -c tmux &
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -211,5 +211,5 @@ bindsym Mod4+s exec --no-startup-id systemctl suspend
 
 # 9/30/2021 rway: error resolved by restarting computer
 bindsym Mod4+b exec "~/.config/i3/bluetooth.sh || i3-nagbar -t warning -m 'Bluetooth Error, use recover script'"
-exec --no-startup-id feh --randomize --bg-fill ~/.local/share/backgrounds/*
+exec --no-startup-id feh --randomize --bg-center --bg-fill ~/.local/share/backgrounds/*
 exec_always --no-startup-id killall compton; compton &
