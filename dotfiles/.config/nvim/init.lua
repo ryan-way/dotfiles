@@ -445,7 +445,13 @@ cmp.setup {
   },
 }
 
+vim.keymap.set('n', '<leader>tt', ':tabnew<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>tc', ':tabclose<CR>', { noremap = true })
 
 vim.opt.relativenumber = true
+vim.g.netrw_browse_split = 3
+vim.g.netrw_preview = 1
+vim.g.netrw_banner = 0
+vim.g.netrw_liststyle = 3
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
