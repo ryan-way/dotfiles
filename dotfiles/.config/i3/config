@@ -51,7 +51,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec alacritty -e $SHELL -i -c "tmux a || tmux" &
-bindsym $mod+n exec alacritty -e $SHELL -i -c tmux &
+bindsym $mod+n exec alacritty -e tmux
 
 # kill focused window
 bindsym $mod+Shift+q kill
