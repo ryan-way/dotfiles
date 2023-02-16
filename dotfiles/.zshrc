@@ -113,7 +113,6 @@ alias vim='nvim'
 alias n='nvim'
 alias n.='nvim .'
 alias ls='exa'
-alias cat='bat'
 
 cd() {
   prevTopLevel=$(git rev-parse --show-toplevel 2>&1 1> /dev/null)

@@ -1,6 +1,6 @@
 [core]
 	editor = nvim
-	pager = bat
+	pager = cat
 [user]
 	name = ryan-way
 	email = ryan.keith.way@gmail.com
