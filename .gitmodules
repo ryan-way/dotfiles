@@ -1,0 +1,9 @@
+[submodule "src/dotfiles/.config/kitty/kitty-themes"]
+	path = src/dotfiles/.config/kitty/kitty-themes
+	url = https://github.com/ryan-way-forks/kitty-themes.git
+[submodule "src/dotfiles/.config/qutebrowser/base16-qutebrowser"]
+	path = src/dotfiles/.config/qutebrowser/base16-qutebrowser
+	url = https://github.com/ryan-way-forks/base16-qutebrowser.git
+[submodule "src/dotfiles/.config/rofi/rofi-themes-collection"]
+	path = src/dotfiles/.config/rofi/rofi-themes-collection
+	url = https://github.com/ryan-way/rofi-themes-collection.git
