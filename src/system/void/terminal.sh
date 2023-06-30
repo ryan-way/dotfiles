@@ -1,5 +1,4 @@
-sudo xbps-install -Syu \
-  git \
+sudo xbps-install \
   make\
   python\
   nodejs\

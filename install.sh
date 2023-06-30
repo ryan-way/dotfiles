@@ -15,28 +15,16 @@ confirm() {
 }
 
 setup() {
-  install=""
+  install="cd ~/.rway/src;"
 
   ls ~/.rway || git clone https://github.com/ryan-way/dotfiles ~/.rway
   cd ~/.rway/src/
 }
 
-add_install() {
+add_executable() {
   [ $# = 1 ] || (echo expected configuration path && return 1)
-  if [ -d "$1" ]; then
-    echo installing directory
-    echo $1
-    install+="ln -s $1 ~/.config/;"
-    local install_path="$1/install.sh"
-    if test $install_path; then
-      install+="~/.config/$install_path;"
-    fi
-  elif [ -x "$1" ]; then
-    echo installing executable
-    install+="$1;"
-  else
-    install+="echo ERROR WITH $1"
-  fi
+  echo installing executable
+  install+="bash $1;"
 }
 
 generate_directory_install() {
@@ -49,9 +37,8 @@ generate_directory_install() {
 
 install_system_directory() {
   [ $# = 1 ] || (echo Expected system directory && return 1)
-  for item in $(/bin/ls $1); do
-    confirm $item && add_install "$1/$item"
-  done
+  confirm terminal && add_executable "$1/terminal.sh"
+  confirm environment && add_executable "$1/environment.sh"
 }
 
 generate_system_install() {
@@ -104,13 +91,15 @@ generate_dotfiles_install() {
 }
 
 generate_install() {
-  generate_system_install
   generate_dotfiles_install
+  # do system last so service updates don't interfere with terminal updates
+  generate_system_install
 }
 
 main() {
   setup
   generate_install
+  install=$(echo $install | sed 's/;/\n/g')
   echo $install
 }
 
