@@ -22,22 +22,25 @@ setup() {
 }
 
 add_install() {
-  [ $# = 0 ] || (echo expected configuration path && return 1)
-  if [ -d $1 ]; then
+  [ $# = 1 ] || (echo expected configuration path && return 1)
+  if [ -d "$1" ]; then
+    echo installing directory
+    echo $1
     install+="ln -s $1 ~/.config/;"
     local install_path="$1/install.sh"
     if test $install_path; then
       install+="~/.config/$install_path;"
     fi
-  elif [ -x $1 ]; then
-    install+="$1"
+  elif [ -x "$1" ]; then
+    echo installing executable
+    install+="$1;"
   else
     install+="echo ERROR WITH $1"
   fi
 }
 
 generate_directory_install() {
-  [ $# = 0 ] || (echo Expected directory && return 1)
+  [ $# = 1 ] || (echo Expected directory && return 1)
   for config in $(/bin/ls $1); do
     local path="$1/$config"
     confirm $config && add_install $path
@@ -45,7 +48,7 @@ generate_directory_install() {
 }
 
 install_system_directory() {
-  [ $# = 0 ] || (echo Expected system directory && return 1)
+  [ $# = 1 ] || (echo Expected system directory && return 1)
   for item in $(/bin/ls $1); do
     confirm $item && add_install "$1/$item"
   done
@@ -57,7 +60,6 @@ generate_system_install() {
   read -p "Selection (or zero to skip): " selection
   case $selection in
     "0")
-      return 0
       ;;
     *)
       options=()
@@ -72,18 +74,30 @@ generate_system_install() {
 
 generate_config_install() {
   for config in $(/bin/ls dotfiles/.config); do
-    confirm $config && add_install "dotfiles/.config/$config"
+    pwd=$(pwd)
+    confirm $config && add_link "$(pwd)/dotfiles/.config/$config" "~/.config/$config"
   done
 }
 
+add_link() {
+  [ $# = 2 ] || (echo expected configuration path && return 1)
+  install+="ln -s $1 $2;"
+  local install_path="$1/install.sh"
+  if test $install_path; then
+    install+="$2/install.sh;"
+  fi
+}
+
 generate_dotfiles_install() {
-  for config in $(/bin/ls dotfiles); do
+  echo "Here"
+  for config in $(/bin/ls -A dotfiles); do
     case $config in
       ".config")
         confirm $config && generate_config_install
         ;;
       *)
-        confirm $config && add_install "dotfiles/$1"
+        pwd=$(pwd)
+        confirm $config && add_link "$(pwd)/dotfiles/$config" "~/$config"
         ;;
     esac
   done
