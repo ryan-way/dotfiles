@@ -6,6 +6,7 @@ verify package manager is up to date
 
 ```
 # void linux
+sudo xbps-install -S
 sudo xbps-install -u xbps
 sudo xbps-install -Su
 ```

@@ -16,6 +16,7 @@ confirm() {
 
 setup() {
   install="cd ~/.rway/src;"
+  mkdir ~/.config
 
   ls ~/.rway || git clone https://github.com/ryan-way/dotfiles ~/.rway
   cd ~/.rway/src/
@@ -100,7 +101,7 @@ main() {
   setup
   generate_install
   install=$(echo $install | sed 's/;/\n/g')
-  echo $install
+  bash $install
 }
 
 main
