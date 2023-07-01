@@ -1,4 +1,4 @@
-sudo xbps-install \
+sudo xbps-install -y\
   make\
   python\
   nodejs\

@@ -1,13 +1,13 @@
 #!/bin/sh
 
 # update xbps
-sudo xbps-install -u libstdc++
+sudo xbps-install -yu libstdc++
 
 # install git stuff
-sudo xbps-install ghq
+sudo xbps-install -y ghq
 
 #install qutebrowser
-sudo xbps-install qutebrowser
+sudo xbps-install -y qutebrowser
 
 # update font
 ghq get --look --shallow http://github.com/ryanoasis/nerd-fonts
@@ -15,7 +15,7 @@ ghq get --look --shallow http://github.com/ryanoasis/nerd-fonts
 cd
 
 # install desktop environment
-sudo xbps-install \
+sudo xbps-install -y\
   xorg-minimal \
   xf86-video-nouveau \
   dbus \
