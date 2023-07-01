@@ -13,7 +13,6 @@ sudo xbps-install \
   tldr\
   dust\
   bandwhich\
-  mdcat\
   procs\
   tokei\
   delta\

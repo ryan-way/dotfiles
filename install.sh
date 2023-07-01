@@ -77,7 +77,6 @@ add_link() {
 }
 
 generate_dotfiles_install() {
-  echo "Here"
   for config in $(/bin/ls -A dotfiles); do
     case $config in
       ".config")
@@ -100,8 +99,7 @@ generate_install() {
 main() {
   setup
   generate_install
-  install=$(echo $install | sed 's/;/\n/g')
-  bash $install
+  echo $install | sed 's/;/\n/g' | bash
 }
 
 main
