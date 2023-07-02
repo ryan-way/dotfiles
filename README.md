@@ -6,9 +6,7 @@ verify package manager is up to date
 
 ```
 # void linux
-sudo xbps-install -S
-sudo xbps-install -u xbps
-sudo xbps-install -Su
+sudo xbps-install -Syu xbps
 ```
 
 verify curl is installed
@@ -32,4 +30,6 @@ sudo xbps-install git
 
 ## Install command
 
+```
 curl https://raw.githubusercontent.com/ryan-way/dotfiles/main/install.sh | sh
+```
