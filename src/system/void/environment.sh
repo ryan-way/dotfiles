@@ -20,7 +20,6 @@ sudo xbps-install -y\
   xf86-video-nouveau \
   dbus \
   elogind \
-  sddm \
   awesome \
   kitty \
   polybar \
