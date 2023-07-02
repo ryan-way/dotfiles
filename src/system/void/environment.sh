@@ -30,6 +30,9 @@ sudo xbps-install -y\
   slim \
   slim-void-theme
 
+sudo mv /usr/share/slim/themes/default /usr/share/slim/themes/default.bak
+sudo ln -s /usr/share/slim/themes/slim-void-theme /usr/share/slim/themes/default
+
 sudo ln -s /etc/sv/dbus /var/service/
 sudo ln -s /etc/sv/elogind /var/service/
 sudo ln -s /etc/sv/slim /var/service/
