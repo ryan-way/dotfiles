@@ -16,7 +16,7 @@ confirm() {
 
 setup() {
   install="cd ~/.rway/src;"
-  mkdir ~/.config
+  [ -d ~/.config ] || mkdir ~/.config
 
   [ -d ~/.rway ] || git clone --recurse-submodules https://github.com/ryan-way/dotfiles ~/.rway
   cd ~/.rway/src/
