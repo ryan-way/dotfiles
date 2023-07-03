@@ -145,6 +145,8 @@ globalkeys = gears.table.join(
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
+    awful.key({ modkey, "Control" }, "l", function () awful.spawn.with_shell("i3lock -L -k --bar-indicator -B 10 --redraw-thread --{time,date}-color=#98C379 --time-size=60 --date-size=32") end,
+              {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,

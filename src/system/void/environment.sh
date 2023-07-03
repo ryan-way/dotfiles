@@ -18,6 +18,7 @@ cd
 sudo xbps-install -y\
   xorg-minimal \
   xf86-video-nouveau \
+  i3lock-color \
   dbus \
   elogind \
   awesome \
