@@ -7,3 +7,6 @@
 [submodule "src/dotfiles/.config/rofi/rofi-themes-collection"]
 	path = src/dotfiles/.config/rofi/rofi-themes-collection
 	url = https://github.com/ryan-way/rofi-themes-collection.git
+[submodule "src/dotfiles/.config/background/Void-Wallpapers"]
+	path = src/dotfiles/.config/background/Void-Wallpapers
+	url = git@github.com:ryan-way-forks/Void-Wallpapers.git

@@ -333,4 +333,4 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 awful.spawn.with_shell("~/.config/polybar/launch.sh")
 awful.spawn.with_shell("picom --config ~/.config/picom/picom.conf")
-awful.spawn.with_shell("feh --bg-scale --randomize ~/.config/background/")
+awful.spawn.with_shell("feh --bg-scale --randomize ~/.config/background/Void-Wallpapers/assets/walls")
