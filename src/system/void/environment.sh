@@ -16,7 +16,7 @@ cd
 
 # install desktop environment
 sudo xbps-install -y\
-  xorg-minimal \
+  xorg \ # xorg-minimal - need to figure out why this doesn't work
   xf86-video-nouveau \
   i3lock-color \
   dbus \
