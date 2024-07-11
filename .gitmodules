@@ -10,3 +10,6 @@
 [submodule "src/dotfiles/.config/background/Void-Wallpapers"]
 	path = src/dotfiles/.config/background/Void-Wallpapers
 	url = git@github.com:ryan-way-forks/Void-Wallpapers.git
+[submodule "src/dotfiles/.config/neofetch/neofetch-themes"]
+	path = src/dotfiles/.config/neofetch/neofetch-themes
+	url = https://github.com/Chick2D/neofetch-themes/

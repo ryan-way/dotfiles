@@ -8,10 +8,6 @@ export EDITOR=$(which lvim)
 
 alias ls="exa --icons -la"
 alias top="btop"
-alias vi="lvim"
-alias vim="lvim"
-alias nvim="lvim"
-alias n="lvim"
 alias cat="bat"
 alias grep="rg"
 alias cd="z"
@@ -20,3 +16,10 @@ alias find="fd"
 alias ps="procs"
 
 neofetch
+
+# bun completions
+[ -s "/home/rway/.bun/_bun" ] && source "/home/rway/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
